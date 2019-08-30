@@ -16,8 +16,8 @@ module.exports = {
   },
 
   async store(req, res) {
-    console.log(req.body)
-    const {name, email, address, city, state} = req.body
+    console.log(req.body.data)
+    const {name, email, address, city, state} = req.body.data
     const userExists = await User.findOne({email})
 
     if (userExists) {
@@ -35,9 +35,10 @@ module.exports = {
   },
 
   async update(req, res) {
-    const {_id} = req.body
+    console.log(req.body)
+    const {_id} = req.body.data
     const userExists = await User.findOne({_id})
-    const {name, email, address, city, state} = req.body
+    const {name, email, address, city, state} = req.body.data
 
     if (userExists) {
       const updateUser = await User.updateOne({_id: userExists._id}, {
