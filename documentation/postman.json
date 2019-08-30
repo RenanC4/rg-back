@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "c3e945f8-9e66-430d-a170-56e8ef2a7fcc",
+		"name": "Radar governamental ",
+		"description": "API - User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Remover usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "_id",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Aqui sera necessario alterar o parametro _Id no HEADER da requisiçao, para o usuario que deseja editar. Esse parametro e ononimo ao que voce consegue pegar facilmente ao Listar Usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Criar usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Nome Sobrenome\",\n\t\"email\": \"email@email.com\",\n\t\"address\": \"Rua 1\",\n\t\"city\": \"Sampa\",\n\t\"state\": \"SP\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Aqui voce pode enviar os parametros no BODY Da requisicao. Via postman, voce pode escolher qualquer informacao que queira cadastrar, diferente do FRONT onde existem validacoes de campos obrigatorios. "
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "_id",
+						"value": "5d6813d67f2baf5552ceb73b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Nome Sobrenome\",\n\t\"email\": \"email@email.com\",\n\t\"address\": \"Rua 2\",\n\t\"city\": \"Sampa\",\n\t\"state\": \"SP\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Aqui sera necessario alterar o parametro _Id no HEADER da requisiçao, para o usuario que deseja editar. Esse parametro e ononimo ao que voce consegue pegar facilmente ao Listar Usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
