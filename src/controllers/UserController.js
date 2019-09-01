@@ -7,7 +7,6 @@ module.exports = {
   },
 
   async user(req, res) {
-    console.log(req.query)
     const {_id} = req.query
     const user =  await User.findOne({
       _id
