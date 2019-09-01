@@ -1,5 +1,5 @@
 const express = require('express')
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const routes = require('./routes')

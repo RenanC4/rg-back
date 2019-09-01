@@ -16,14 +16,12 @@ module.exports = {
   },
 
   async store(req, res) {
-    console.log(req.body.data)
     const {name, email, address, city, state} = req.body.data
     const userExists = await User.findOne({email})
 
     if (userExists) {
-      return res.json({status: 202, message: 'Ooops, Email ja cadastrado!'})
+      return res.json({status: 404, message: 'Ooops, E-mail já cadastrado!'})
     }
-
     const createUser = await User.create({
       name,
       email, 
@@ -31,11 +29,11 @@ module.exports = {
       city, 
       state
     })
-    return res.json(createUser)
+    console.log(createUser)
+    return  res.json({status: 200, message: 'Usuário criado com sucesso  !'})
   },
 
   async update(req, res) {
-    console.log(req.body)
     const {_id} = req.body.data
     const userExists = await User.findOne({_id})
     const {name, email, address, city, state} = req.body.data
@@ -50,20 +48,21 @@ module.exports = {
         state
         }
       })
-      return  res.json(updateUser)
+      console.log(updateUser)
+      return  res.json({status: 200, message: 'Usuário editado com sucesso  !'})
     }
-    return res.json({status: 404, message: 'Ooops, Usuario nao encontrado!'})
+    return res.json({status: 404, message: 'Ooops, Usuário não encontrado!'})
   },
 
   async delete(req, res) {
     const {_id} = req.body
     const userExists = await User.findOne({_id}) 
     try {
-      const numsei = await User.deleteOne({_id: userExists._id})
-      console.log(numsei)
-      return res.json({status: 200, message: 'Usuario removido com sucesso'})
+      const deleteUser = await User.deleteOne({_id: userExists._id})
+      console.log(deleteUser)
+      return res.json({status: 200, message: 'Usuário removido com sucesso'})
     } catch {
-      return res.json({status: 404, message: 'Ooops, Usuario nao encontrado!'})
+      return res.json({status: 404, message: 'Ooops, Usuário não encontrado!'})
     }    
   }
 

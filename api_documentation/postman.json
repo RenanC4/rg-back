@@ -14,31 +14,45 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
+						"value": "application/x-www-form-urlencoded",
 						"type": "text"
 					},
 					{
-						"key": "_id",
+						"key": "",
 						"value": "",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "server",
+							"value": "server",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
-					"raw": "http://localhost:3333/users",
+					"raw": "http://localhost:3331/users?",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3333",
+					"port": "3331",
 					"path": [
 						"users"
+					],
+					"query": [
+						{
+							"key": "'a'",
+							"value": "'aa'",
+							"disabled": true
+						}
 					]
 				},
-				"description": "Aqui sera necessario alterar o parametro _Id no HEADER da requisiçao, para o usuario que deseja editar. Esse parametro e ononimo ao que voce consegue pegar facilmente ao Listar Usuarios."
+				"description": "Aqui sera necessario alterar o parametro _Id no BODY da requisiçao, para o usuario que deseja editar. Esse parametro e ononimo ao que voce consegue pegar facilmente ao Listar Usuarios."
 			},
 			"response": []
 		},
@@ -61,16 +75,42 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Nome Sobrenome\",\n\t\"email\": \"email@email.com\",\n\t\"address\": \"Rua 1\",\n\t\"city\": \"Sampa\",\n\t\"state\": \"SP\"\n}"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Nome Sobrenome",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@email3.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Rua 1",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Sampa",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "SP",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
-					"raw": "http://localhost:3333/users",
+					"raw": "http://localhost:3332/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3333",
+					"port": "3332",
 					"path": [
 						"users"
 					]
@@ -111,19 +151,22 @@
 						"users"
 					]
 				},
-				"description": "Aqui sera necessario alterar o parametro _Id no HEADER da requisiçao, para o usuario que deseja editar. Esse parametro e ononimo ao que voce consegue pegar facilmente ao Listar Usuarios."
+				"description": "Aqui sera necessario alterar o parametro _Id no  BODY da requisiçao, para o usuario que deseja editar. Esse parametro e ononimo ao que voce consegue pegar facilmente ao Listar Usuarios."
 			},
 			"response": []
 		},
 		{
 			"name": "Listar Usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
+						"value": "application/x-www-form-urlencoded",
 						"type": "text"
 					},
 					{
@@ -134,18 +177,32 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "_id",
+							"value": "5d6881914d124e39f36b5bda",
+							"type": "text",
+							"disabled": true
+						}
+					]
 				},
 				"url": {
-					"raw": "http://localhost:3333/users",
+					"raw": "http://localhost:3331/users/id?_id=5d6881914d124e39f36b5bda",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3333",
+					"port": "3331",
 					"path": [
-						"users"
+						"users",
+						"id"
+					],
+					"query": [
+						{
+							"key": "_id",
+							"value": "5d6881914d124e39f36b5bda"
+						}
 					]
 				}
 			},
