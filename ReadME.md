@@ -1,8 +1,8 @@
-** gp-front required to work properly **
+** rg-front required to work properly **
 
-git clone https://github.com/RenanC4/pg-back
+git clone https://github.com/RenanC4/rg-back
 
-cd pg-back
+cd rg-back
 
 yarn install
 
